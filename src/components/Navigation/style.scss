@@ -1,0 +1,79 @@
+@import "src/scss/variables";
+@import "src/scss/mixins";
+
+.Navigation {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__submenu__item,
+  &__link {
+    padding: 0.6rem 2rem;
+    display: block;
+    cursor: pointer;
+    color: var(--primary);
+
+    p {
+      transform: translateX(0);
+      transform-origin: 0 50%;
+      transition: transform $timeFast;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      max-width: 100%;
+    }
+
+    &:hover,
+    &:focus,
+    &--active {
+      p {
+        transform: scaleX(1.08);
+        overflow: visible;
+      }
+    }
+  }
+
+  &__submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height $timeFast;
+    background-color: var(--gray-light);
+    box-shadow: inset 0 0.3rem 0.4rem -0.4rem var(--gray),
+      inset 0 -0.3rem 0.4rem -0.4rem var(--gray);
+
+    &__item {
+      position: relative;
+      transition: box-shadow $timeFast;
+      outline: none;
+
+      &:after {
+        content: "";
+        pointer-events: none;
+        width: 0;
+        height: 0;
+        border-width: 0.5rem 0.5rem 0 0.5rem;
+        border-style: solid;
+        border-color: var(--primary) transparent transparent transparent;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        right: 1rem;
+        top: 1.5rem;
+      }
+    }
+
+    &--active {
+      padding: 0.1rem 0;
+      max-height: 3.2rem * 2;
+    }
+  }
+
+  &__bottom {
+    margin: auto var(--padding-gap) var(--padding-gap);
+    display: flex;
+
+    .Button {
+      flex: 1 1 auto;
+    }
+  }
+}

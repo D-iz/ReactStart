@@ -1,0 +1,77 @@
+@import "src/scss/variables";
+@import "src/scss/mixins";
+
+.GlobalLayout {
+  $sidebarWidth: 20rem;
+
+  min-height: 100vh;
+
+  &__Sidebar {
+    padding-right: 0.1rem;
+    width: $sidebarWidth;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+    flex-direction: column;
+    background-color: var(--white);
+    box-shadow: $Shadow;
+    z-index: 1;
+
+    .Logo {
+      width: 10rem;
+      height: 6rem;
+      display: block;
+
+      .Img-pic {
+        box-shadow: none;
+      }
+    }
+
+    > .Select {
+      margin: var(--padding-gap);
+
+      &:after {
+        display: none;
+      }
+    }
+
+    > .Navigation {
+      flex: 1 1 auto;
+    }
+
+    > .Bottom {
+      margin: var(--padding-gap);
+      display: flex;
+
+      .Button {
+        flex: 1 1 auto;
+      }
+    }
+  }
+
+  &__Main {
+    padding-left: $sidebarWidth;
+    max-width: 100%;
+    background-color: var(--light);
+
+    &__head {
+      margin-bottom: var(--padding-gap);
+      position: sticky;
+      top: 0;
+      text-align: center;
+      background-color: var(--info-light);
+      z-index: 10;
+
+      &--red {
+        background-color: var(--danger-light);
+      }
+    }
+
+    &__inner {
+      padding: var(--padding-gap);
+    }
+  }
+}

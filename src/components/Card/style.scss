@@ -1,0 +1,15 @@
+@import "src/scss/variables";
+
+.Card {
+  width: 17rem;
+  padding: 1rem;
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  box-shadow: $Shadow;
+  transition: box-shadow 0.3s;
+
+  &:hover {
+    box-shadow: $ShadowHover;
+  }
+}

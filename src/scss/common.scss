@@ -1,0 +1,111 @@
+@import "mixins";
+@import "variables";
+
+html,
+body,
+#root {
+  min-height: 100vh;
+}
+
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  user-select: none;
+  background-color: #f8f8f8;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  @include fs(1.3rem, 2rem);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+a {
+  outline: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+label {
+  // for checkboxes
+  pointer-events: none;
+
+  & * {
+    pointer-events: auto;
+  }
+
+  p {
+    pointer-events: none;
+  }
+}
+
+#root {
+  color: var(--gray-dark);
+
+  --secondary: rgb(146, 156, 165);
+  --primary: rgb(255, 121, 13);
+  --primary-light: #{lighten(rgb(255, 121, 13), 40%)};
+  --success: rgb(40, 167, 69);
+  --success-light: #{lighten(rgb(40, 167, 69), 40%)};
+  --info: rgb(103, 238, 249);
+  --info-light: #{lighten(rgb(103, 238, 249), 20%)};
+  --warning: rgb(255, 193, 7);
+  --warning-light: #{lighten(rgb(255, 193, 7), 20%)};
+  --danger: rgb(220, 63, 59);
+  --danger-light: #{lighten(rgb(220, 63, 59), 35%)};
+
+  --blue: rgb(0, 123, 255);
+  --indigo: rgb(102, 16, 242);
+  --purple: rgb(111, 66, 193);
+  --pink: rgb(232, 62, 140);
+  --red: rgb(220, 63, 59);
+  --orange: rgb(255, 121, 13);
+  --yellow: rgb(255, 193, 7);
+  --green: rgb(40, 167, 69);
+  --teal: rgb(32, 201, 151);
+  --cyan: rgb(103, 238, 249);
+  --white: rgb(255, 255, 255);
+  --gray: rgb(146, 156, 165);
+  --gray-thin: rgb(220, 220, 220);
+  --gray-light: rgb(248, 248, 248);
+  --gray-medium: rgb(236, 239, 245);
+  --gray-dark: rgb(52, 58, 64);
+  --blue-light: rgb(234, 242, 247);
+
+  --border-radius: 0.4rem;
+
+  --padding-gap: 2rem;
+  --padding-s: 0.8rem;
+
+  --borderShadow: #{$BorderShadow};
+  --borderShadowFocus: #{$BorderShadowFocus};
+  --borderShadowDanger: #{$BorderShadowDanger};
+  --borderShadowDangerFocus: #{$BorderShadowDangerFocus};
+}
+
+div.reactTooltip {
+  background-color: #f5f5f9;
+  color: rgba(0, 0, 0, 0.87);
+  max-width: 25rem;
+  font-size: 1.3rem;
+  border: 1px solid #dadde9;
+  word-wrap: break-word;
+
+  &.place-top,
+  &.place-right,
+  &.place-bottom,
+  &.place-left {
+    &:before,
+    &:after {
+      display: none;
+    }
+  }
+}

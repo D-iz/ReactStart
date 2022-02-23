@@ -1,0 +1,20 @@
+@import "src/scss/mixins";
+@import "src/scss/variables";
+
+.Logs {
+  background: var(--blue-light);
+  padding: var(--padding-gap);
+  border-radius: var(--border-radius);
+  box-shadow: $Shadow;
+
+  &__item {
+    color: var(--gray);
+
+    &.SUCCESS {
+      color: var(--green);
+    }
+    &.FAIL {
+      color: var(--red);
+    }
+  }
+}

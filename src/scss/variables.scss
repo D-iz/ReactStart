@@ -1,0 +1,17 @@
+$timeFast: 160ms;
+$timeNormal: 330ms;
+$timeSlow: 660ms;
+
+$Shadow: inset 0 0 0 0.1rem var(--gray-thin),
+  var(--gray) 0 0.1rem 0.4rem -0.2rem;
+
+$ShadowHover: inset 0 0 0 0.1rem var(--gray-thin),
+  var(--gray) 0 0.1rem 1.4rem -0.2rem;
+
+$BorderShadow: 0 0 0 0 var(--primary), inset 0 0 0 0.1rem var(--primary);
+$BorderShadowFocus: 0 0 0 0.1rem var(--primary),
+  inset 0 0 0 0.1rem var(--primary);
+
+$BorderShadowDanger: 0 0 0 0 var(--danger), inset 0 0 0 0.1rem var(--danger);
+$BorderShadowDangerFocus: 0 0 0 0.1rem var(--danger),
+  inset 0 0 0 0.1rem var(--danger);

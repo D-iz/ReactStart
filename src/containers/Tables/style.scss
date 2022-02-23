@@ -1,0 +1,15 @@
+.Table {
+  &__footer {
+    margin-top: auto;
+    display: flex;
+
+    .Button {
+      margin-top: var(--padding-gap);
+      margin-left: var(--padding-gap);
+
+      &:first-child {
+        margin-left: auto;
+      }
+    }
+  }
+}

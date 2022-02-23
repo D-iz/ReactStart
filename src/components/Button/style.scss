@@ -1,0 +1,103 @@
+@import "src/scss/mixins";
+@import "src/scss/variables";
+
+.Button {
+  @mixin colour-base($main-var, $second-var) {
+    background-color: $second-var;
+    color: $main-var;
+
+    .Svg {
+      fill: $main-var;
+    }
+    &:hover,
+    &.active {
+      background-color: $main-var;
+      color: $second-var;
+
+      .Svg {
+        fill: $second-var;
+      }
+    }
+  }
+  @mixin colour($main-var, $second-var) {
+    @include colour-base($main-var, $second-var);
+    box-shadow: 0 0 0 0 $main-var, inset 0 0 0 0.1rem $main-var;
+
+    &:focus {
+      box-shadow: 0 0 0 0.1rem $main-var, inset 0 0 0 0.1rem $main-var;
+    }
+  }
+
+  @mixin colour-reversed($main-var, $second-var) {
+    @include colour-base($main-var, $second-var);
+    box-shadow: 0 0 0 0 $second-var, inset 0 0 0 0.1rem $second-var;
+
+    &:focus {
+      box-shadow: 0 0 0 0.1rem $second-var, inset 0 0 0 0.1rem $second-var;
+    }
+  }
+
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: $timeFast;
+  outline: none;
+
+  &[disabled] {
+    @include disabled;
+  }
+
+  &.small {
+    padding: 0.3rem;
+  }
+
+  &.medium {
+    padding: 0.5rem 1.2rem;
+  }
+
+  &.big {
+  }
+
+  &.large {
+  }
+
+  &.red {
+    @include colour(var(--red), var(--white));
+
+    &.reversed {
+      @include colour-reversed(var(--white), var(--red));
+    }
+  }
+
+  &.blue {
+    @include colour(var(--blue), var(--white));
+
+    &.reversed {
+      @include colour-reversed(var(--white), var(--blue));
+    }
+  }
+
+  &.green {
+    @include colour(var(--green), var(--white));
+
+    &.reversed {
+      @include colour-reversed(var(--white), var(--green));
+    }
+  }
+
+  &.yellow {
+    @include colour(var(--yellow), var(--white));
+
+    &.reversed {
+      @include colour-reversed(var(--white), var(--yellow));
+    }
+  }
+
+  &.orange {
+    @include colour(var(--primary), var(--white));
+
+    &.reversed {
+      @include colour-reversed(var(--white), var(--primary));
+    }
+  }
+}

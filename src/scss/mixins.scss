@@ -1,0 +1,26 @@
+@mixin fs($fs, $lh) {
+  font-size: $fs;
+  line-height: $lh;
+}
+
+@mixin disabled() {
+  pointer-events: none;
+  opacity: 0.3;
+  cursor: default;
+}
+
+@mixin errorText() {
+  pointer-events: all;
+  padding: 0 0.2rem;
+  max-width: calc(100% - 1rem);
+  border-radius: var(--border-radius);
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background-color: var(--white);
+  color: var(--danger);
+  @include fs(1.2rem, 1.2rem);
+}

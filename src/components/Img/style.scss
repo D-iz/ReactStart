@@ -1,0 +1,37 @@
+@import "src/scss/variables";
+
+.Img {
+  width: 15rem;
+  height: 15rem;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+
+  &-pic {
+    opacity: 0;
+    transition: $timeSlow;
+    box-shadow: $Shadow;
+  }
+
+  .Spinner {
+    margin: auto;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+  }
+
+  &.loaded {
+    .Img {
+      &-pic {
+        opacity: 1;
+      }
+    }
+
+    .Spinner {
+      display: none;
+    }
+  }
+}

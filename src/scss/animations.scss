@@ -1,0 +1,102 @@
+@import "variables";
+
+.animation-opacity {
+  transition: opacity $timeFast;
+  will-change: opacity;
+
+  &-appear,
+  &-enter,
+  &-exit {
+    transition: opacity $timeFast;
+    will-change: opacity;
+
+    &-active,
+    &-done {
+      transition: opacity $timeFast;
+      will-change: opacity;
+    }
+  }
+
+  &-appear,
+  &-enter {
+    opacity: 0.01;
+
+    &-active,
+    &-done {
+      opacity: 1;
+    }
+  }
+
+  &-exit {
+    opacity: 1;
+
+    &-active,
+    &-done {
+      opacity: 0.01;
+    }
+  }
+}
+
+@keyframes animate-stripes {
+  100% {
+    background-position: 16rem 0;
+  }
+}
+
+@keyframes spinner {
+  0%,
+  100% {
+    box-shadow: 0em -2.6em 0em 0em var(--primary), 1.8em -1.8em 0 0em,
+      2.5em 0em 0 0em, 1.75em 1.75em 0 0em, 0em 2.5em 0 0em, -1.8em 1.8em 0 0em,
+      -2.6em 0em 0 0em, -1.8em -1.8em 0 0em var(--primary);
+  }
+  12.5% {
+    box-shadow: 0em -2.6em 0em 0em var(--primary),
+      1.8em -1.8em 0 0em var(--primary), 2.5em 0em 0 0em, 1.75em 1.75em 0 0em,
+      0em 2.5em 0 0em, -1.8em 1.8em 0 0em, -2.6em 0em 0 0em, -1.8em -1.8em 0 0em;
+  }
+  25% {
+    box-shadow: 0em -2.6em 0em 0em, 1.8em -1.8em 0 0em var(--primary),
+      2.5em 0em 0 0em var(--primary), 1.75em 1.75em 0 0em, 0em 2.5em 0 0em,
+      -1.8em 1.8em 0 0em, -2.6em 0em 0 0em, -1.8em -1.8em 0 0em;
+  }
+  37.5% {
+    box-shadow: 0em -2.6em 0em 0em, 1.8em -1.8em 0 0em,
+      2.5em 0em 0 0em var(--primary), 1.75em 1.75em 0 0em var(--primary),
+      0em 2.5em 0 0em, -1.8em 1.8em 0 0em, -2.6em 0em 0 0em, -1.8em -1.8em 0 0em;
+  }
+  50% {
+    box-shadow: 0em -2.6em 0em 0em, 1.8em -1.8em 0 0em, 2.5em 0em 0 0em,
+      1.75em 1.75em 0 0em var(--primary), 0em 2.5em 0 0em var(--primary),
+      -1.8em 1.8em 0 0em, -2.6em 0em 0 0em, -1.8em -1.8em 0 0em;
+  }
+  62.5% {
+    box-shadow: 0em -2.6em 0em 0em, 1.8em -1.8em 0 0em, 2.5em 0em 0 0em,
+      1.75em 1.75em 0 0em, 0em 2.5em 0 0em var(--primary),
+      -1.8em 1.8em 0 0em var(--primary), -2.6em 0em 0 0em, -1.8em -1.8em 0 0em;
+  }
+  75% {
+    box-shadow: 0em -2.6em 0em 0em, 1.8em -1.8em 0 0em, 2.5em 0em 0 0em,
+      1.75em 1.75em 0 0em, 0em 2.5em 0 0em, -1.8em 1.8em 0 0em var(--primary),
+      -2.6em 0em 0 0em var(--primary), -1.8em -1.8em 0 0em;
+  }
+  87.5% {
+    box-shadow: 0em -2.6em 0em 0em, 1.8em -1.8em 0 0em, 2.5em 0em 0 0em,
+      1.75em 1.75em 0 0em, 0em 2.5em 0 0em, -1.8em 1.8em 0 0em,
+      -2.6em 0em 0 0em var(--primary), -1.8em -1.8em 0 0em var(--primary);
+  }
+}
+
+.opacity-show {
+  opacity: 1;
+  animation: opacity-show $timeFast;
+
+  @keyframes opacity-show {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
